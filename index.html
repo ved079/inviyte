@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sanskruti & Akshay – engagement · refined</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #1e1a16;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Cormorant Garamond', serif;
+            -webkit-font-smoothing: antialiased;
+            padding: 12px;
+        }
+
+        .invitation-card {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            height: 780px;
+            background: #fdf7f2;
+            background-image: radial-gradient(circle at 20% 30%, rgba(245, 230, 230, 0.4) 0%, transparent 35%),
+                              radial-gradient(circle at 90% 70%, rgba(244, 235, 225, 0.6) 0%, transparent 40%),
+                              url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            box-shadow: 0 25px 45px -10px rgba(0,0,0,0.4), 0 0 0 1px rgba(212, 175, 55, 0.2) inset;
+            border-radius: 240px 240px 40px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 18px 28px 18px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .ambient-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 110%;
+            height: 110%;
+            background: radial-gradient(ellipse at 50% 40%, rgba(251, 240, 225, 0.7) 0%, rgba(244, 231, 216, 0) 70%);
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .arch-moti {
+            width: 100%;
+            margin-top: 6px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .arch-svg {
+            width: 160px;
+            height: 45px;
+            opacity: 0.7;
+        }
+
+        .floral-spray {
+            width: 84px;
+            height: 40px;
+            margin-top: 5px;
+            opacity: 0.65;
+            stroke: #b28b5e;
+        }
+
+        .invite-line {
+            font-size: 0.85rem;
+            letter-spacing: 3.2px;
+            color: #8b6f50;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 8px;
+            margin-top: 8px;
+            word-spacing: 2px;
+        }
+
+        /* Adjusted line-height to give more room */
+        .names-pair {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.2; 
+            margin: 8px 0 0px 0;
+        }
+
+        /* Added padding to prevent the top/bottom cutoffs, tweaked margins to keep them close */
+        .name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.2rem;
+            background: linear-gradient(145deg, #b68b40 0%, #eed68a 35%, #e6c270 60%, #b38733 100%);
+            background-size: 250% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shimmerGold 5s linear infinite;
+            letter-spacing: 1px;
+            padding: 15px 20px; 
+            margin: -20px 0; 
+        }
+
+        .ampersand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.3rem;
+            font-style: italic;
+            color: #b6965c;
+            line-height: 0.8;
+            margin: 0 0 6px 0;
+            position: relative;
+            top: -6px;
+            text-shadow: 0 2px 5px rgba(170, 119, 28, 0.15);
+        }
+
+        .pleasure-text {
+            font-size: 1.05rem;
+            color: #3f332b;
+            line-height: 1.5;
+            margin: 15px 0 10px 0;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+            border-bottom: 1px dashed rgba(212, 175, 55, 0.5);
+            border-top: 1px dashed rgba(212, 175, 55, 0.5);
+            padding: 12px 0;
+            width: 90%;
+            max-width: 280px;
+            text-align: center;
+        }
+
+        .golden-date {
+            font-size: 1.9rem;
+            font-weight: 500;
+            color: #836e46;
+            letter-spacing: 3px;
+            margin-top: 5px;
+            line-height: 1.2;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .day-detail {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            color: #6f523b;
+            letter-spacing: 2.5px;
+            font-weight: 300;
+        }
+
+        .venue-block {
+            margin: 10px 0 12px 0;
+        }
+
+        .venue-name {
+            font-size: 1.65rem;
+            font-weight: 400;
+            color: #3f2e22;
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+
+        .venue-hint {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: #a77b54;
+            text-transform: uppercase;
+        }
+
+        .rsvp-btn {
+            margin: 12px 0 18px 0;
+            padding: 12px 36px;
+            background: transparent;
+            border: 1.5px solid #c6a15e;
+            color: #c6a15e;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 3.5px;
+            border-radius: 48px;
+            backdrop-filter: blur(2px);
+            transition: 0.3s;
+            cursor: pointer;
+            font-family: 'Cormorant Garamond', serif;
+            background: rgba(255, 245, 235, 0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .rsvp-btn:hover, .rsvp-btn:active {
+            background: #c6a15e;
+            color: #fdf5ea;
+            border-color: #c6a15e;
+            box-shadow: 0 8px 18px rgba(190, 145, 70, 0.3);
+        }
+
+        .footer-curl {
+            width: 70px;
+            height: 20px;
+            opacity: 0.4;
+            margin-bottom: 2px;
+        }
+
+        @keyframes shimmerGold {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .content > * {
+            animation: gentleRise 0.9s cubic-bezier(0.15, 0.85, 0.35, 1) both;
+        }
+
+        .content > :nth-child(2) { animation-delay: 0.1s; }
+        .content > :nth-child(3) { animation-delay: 0.2s; }
+        .content > :nth-child(4) { animation-delay: 0.3s; }
+        .content > :nth-child(5) { animation-delay: 0.4s; }
+        .content > :nth-child(6) { animation-delay: 0.5s; }
+        .content > :nth-child(7) { animation-delay: 0.6s; }
+        .content > :nth-child(8) { animation-delay: 0.7s; }
+        .content > :nth-child(9) { animation-delay: 0.8s; }
+
+        @keyframes gentleRise {
+            0% { opacity: 0; transform: translateY(12px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .arch-svg line, .arch-svg path {
+            stroke: #a98754;
+            stroke-width: 1;
+        }
+
+        .invitation-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            width: 90%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e9cf9e, transparent);
+        }
+
+        @media (max-height: 700px) {
+            .invitation-card { height: 720px; padding: 20px 12px; }
+            .name { font-size: 3.8rem; }
+            .golden-date { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-card">
+        <div class="ambient-glow"></div>
+
+        <div class="content">
+            <div class="arch-moti">
+                <svg class="arch-svg" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 10 Q 100 -8 170 10" stroke="#b4915c" stroke-width="1.2" fill="none" stroke-dasharray="3 2" opacity="0.7"/>
+                    <path d="M10 20 L190 20" stroke="#b4915c" stroke-width="0.9" stroke-dasharray="4 3" opacity="0.5"/>
+                    <path d="M50 30 L150 30" stroke="#ccb185" stroke-width="0.8" opacity="0.6"/>
+                    <circle cx="100" cy="8" r="3" fill="#e1c285" opacity="0.7"/>
+                </svg>
+            </div>
+
+            <svg class="floral-spray" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 12 C 28 5, 40 6, 45 12 C 50 18, 58 20, 65 12" stroke="#b48751" stroke-width="0.9" fill="none"/>
+                <path d="M30 18 Q 36 24, 44 18" stroke="#b48751" stroke-width="0.8" fill="none"/>
+                <circle cx="42" cy="13" r="2" fill="#d8b06b" stroke="none" opacity="0.8"/>
+                <circle cx="55" cy="16" r="1.5" fill="#d8b06b" stroke="none" opacity="0.6"/>
+            </svg>
+
+            <div class="invite-line">TOGETHER WITH FAMILIES</div>
+
+            <div class="names-pair">
+                <div class="name">Sanskruti</div>
+                <div class="ampersand">&</div>
+                <div class="name">Akshay</div>
+            </div>
+
+            <div class="pleasure-text">
+                request the pleasure of your presence<br>at their engagement ceremony
+            </div>
+
+            <div>
+                <div class="golden-date">20 . 03 . 2026</div>
+                <div class="day-detail">saturday · six o'clock</div>
+            </div>
+
+            <div class="venue-block">
+                <div class="venue-name">Raaga Palace</div>
+                <div class="venue-hint">Kalewadi, Pune</div>
+            </div>
+
+           <a
+  href="https://www.google.com/maps?q=26.912433,75.787271"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="rsvp-btn"
+>
+  save the date
+</a>
+
+            <svg class="footer-curl" viewBox="0 0 70 20">
+                <path d="M10 15 Q 30 5, 60 15" stroke="#b4915c" stroke-width="1" fill="none" opacity="0.5"/>
+                <path d="M20 18 Q 35 8, 50 18" stroke="#b4915c" stroke-width="0.6" fill="none" opacity="0.6"/>
+            </svg>
+        </div>
+    </div>
+</body>
+</html>
