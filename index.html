@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sanskruti & Akshay – engagement · refined</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>Akshay & Sanskruti – engagement · refined</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Alex+Brush&family=Tiro+Devanagari+Marathi&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -38,7 +38,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding: 30px 18px 28px 18px;
+            padding: 30px 18px 20px 18px;
             overflow: hidden;
             transition: all 0.2s;
         }
@@ -81,13 +81,81 @@
             opacity: 0.7;
         }
 
-        .floral-spray {
-            width: 84px;
-            height: 40px;
-            margin-top: 5px;
-            opacity: 0.65;
-            stroke: #b28b5e;
+        /* --- MARATHI INITIALS LOGO --- */
+        .marathi-logo {
+            position: relative;
+            width: 160px;
+            height: 110px;
+            margin-top: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
+        .m-initial {
+            font-family: 'Tiro Devanagari Marathi', serif;
+            font-size: 5rem;
+            background: linear-gradient(145deg, #b68b40 0%, #eed68a 35%, #e6c270 60%, #b38733 100%);
+            background-size: 250% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shimmerGold 5s linear infinite;
+            line-height: 1;
+            padding: 5px;
+            text-shadow: 0px 2px 10px rgba(182, 139, 64, 0.15);
+        }
+
+        .m-a {
+            transform: translateY(-10px) translateX(15px);
+            z-index: 2;
+        }
+
+        .m-s {
+            transform: translateY(10px) translateX(-15px);
+            z-index: 1;
+        }
+
+        .floral-dec {
+            position: absolute;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .dec-1 {
+            top: -15px;
+            left: -10px;
+            width: 75px;
+            height: 75px;
+        }
+
+        .dec-2 {
+            bottom: -15px;
+            right: -5px;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .side-floral {
+            position: absolute;
+            top: 28%;
+            width: 55px;
+            height: auto;
+            opacity: 0.85;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .side-floral.left {
+            left: -5px;
+        }
+        
+        .side-floral.right {
+            right: -5px;
+            transform: scaleX(-1);
+        }
+
+        /* ---------------------------------- */
 
         .invite-line {
             font-size: 0.85rem;
@@ -95,24 +163,36 @@
             color: #8b6f50;
             text-transform: uppercase;
             font-weight: 300;
-            margin-bottom: 8px;
-            margin-top: 8px;
+            margin-bottom: 2px;
+            margin-top: 10px;
             word-spacing: 2px;
         }
 
-        /* Adjusted line-height to give more room */
+        /* NEW: Father's addition for Family Name */
+        .parents-line {
+            font-size: 1.1rem;
+            color: #5D161D;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            margin-bottom: 4px;
+            text-align: center;
+            line-height: 1.3;
+            letter-spacing: 0.5px;
+        }
+
         .names-pair {
             display: flex;
             flex-direction: column;
             align-items: center;
-            line-height: 1.2; 
-            margin: 8px 0 0px 0;
+            line-height: 1; 
+            margin: 4px 0 0px 0;
+            z-index: 5;
         }
 
-        /* Added padding to prevent the top/bottom cutoffs, tweaked margins to keep them close */
+        /* Updated to Alex Brush Font for perfect Capital A */
         .name {
-            font-family: 'Great Vibes', cursive;
-            font-size: 4.2rem;
+            font-family: 'Alex Brush', cursive;
+            font-size: 4.8rem;
             background: linear-gradient(145deg, #b68b40 0%, #eed68a 35%, #e6c270 60%, #b38733 100%);
             background-size: 250% auto;
             color: transparent;
@@ -120,19 +200,19 @@
             background-clip: text;
             animation: shimmerGold 5s linear infinite;
             letter-spacing: 1px;
-            padding: 15px 20px; 
-            margin: -20px 0; 
+            padding: 10px 20px; 
+            margin: -15px 0; 
         }
 
         .ampersand {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.3rem;
+            font-size: 2.1rem;
             font-style: italic;
             color: #b6965c;
             line-height: 0.8;
-            margin: 0 0 6px 0;
+            margin: 0 0 4px 0;
             position: relative;
-            top: -6px;
+            top: -4px;
             text-shadow: 0 2px 5px rgba(170, 119, 28, 0.15);
         }
 
@@ -140,12 +220,12 @@
             font-size: 1.05rem;
             color: #3f332b;
             line-height: 1.5;
-            margin: 15px 0 10px 0;
+            margin: 10px 0 8px 0;
             font-weight: 400;
             letter-spacing: 0.2px;
             border-bottom: 1px dashed rgba(212, 175, 55, 0.5);
             border-top: 1px dashed rgba(212, 175, 55, 0.5);
-            padding: 12px 0;
+            padding: 10px 0;
             width: 90%;
             max-width: 280px;
             text-align: center;
@@ -172,7 +252,8 @@
         }
 
         .venue-block {
-            margin: 10px 0 12px 0;
+            margin: 6px 0 10px 0;
+            text-align: center;
         }
 
         .venue-name {
@@ -191,7 +272,7 @@
         }
 
         .rsvp-btn {
-            margin: 12px 0 18px 0;
+            margin: 8px 0 12px 0;
             padding: 12px 36px;
             background: transparent;
             border: 1.5px solid #c6a15e;
@@ -206,6 +287,9 @@
             font-family: 'Cormorant Garamond', serif;
             background: rgba(255, 245, 235, 0.2);
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-decoration: none;
+            display: inline-block;
+            z-index: 10;
         }
 
         .rsvp-btn:hover, .rsvp-btn:active {
@@ -220,6 +304,30 @@
             height: 20px;
             opacity: 0.4;
             margin-bottom: 2px;
+        }
+
+        /* --- FALLING FLOWERS CSS --- */
+        .flower-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 100;
+            overflow: hidden;
+        }
+        
+        .falling-flower {
+            position: absolute;
+            top: -50px;
+            opacity: 0;
+            animation: fall 1 forwards linear;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-50px) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            80% { opacity: 0.8; }
+            100% { transform: translateY(105vh) translateX(var(--drift)) rotate(360deg); opacity: 0; }
         }
 
         @keyframes shimmerGold {
@@ -262,14 +370,36 @@
 
         @media (max-height: 700px) {
             .invitation-card { height: 720px; padding: 20px 12px; }
-            .name { font-size: 3.8rem; }
+            .name { font-size: 4.2rem; margin: -10px 0; }
             .golden-date { font-size: 1.6rem; }
+            .m-initial { font-size: 4.2rem; }
+            .parents-line { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
     <div class="invitation-card">
         <div class="ambient-glow"></div>
+        
+        <svg class="side-floral left" viewBox="0 0 50 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 10 10 Q 30 75 10 140" stroke="#C39D60" stroke-width="1.2" fill="none"/>
+            <path d="M 15 30 C 25 20, 35 30, 20 40 Z" fill="#455A43" opacity="0.8"/>
+            <path d="M 22 70 C 40 65, 35 85, 20 80 Z" fill="#7B1E27" opacity="0.9"/>
+            <path d="M 18 110 C 30 100, 35 120, 15 125 Z" fill="#455A43" opacity="0.7"/>
+            <circle cx="28" cy="45" r="1.5" fill="#eed68a"/>
+            <circle cx="32" cy="75" r="2" fill="#eed68a"/>
+            <circle cx="25" cy="105" r="1.5" fill="#eed68a"/>
+        </svg>
+        
+        <svg class="side-floral right" viewBox="0 0 50 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 10 10 Q 30 75 10 140" stroke="#C39D60" stroke-width="1.2" fill="none"/>
+            <path d="M 15 30 C 25 20, 35 30, 20 40 Z" fill="#455A43" opacity="0.8"/>
+            <path d="M 22 70 C 40 65, 35 85, 20 80 Z" fill="#7B1E27" opacity="0.9"/>
+            <path d="M 18 110 C 30 100, 35 120, 15 125 Z" fill="#455A43" opacity="0.7"/>
+            <circle cx="28" cy="45" r="1.5" fill="#eed68a"/>
+            <circle cx="32" cy="75" r="2" fill="#eed68a"/>
+            <circle cx="25" cy="105" r="1.5" fill="#eed68a"/>
+        </svg>
 
         <div class="content">
             <div class="arch-moti">
@@ -281,19 +411,56 @@
                 </svg>
             </div>
 
-            <svg class="floral-spray" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 12 C 28 5, 40 6, 45 12 C 50 18, 58 20, 65 12" stroke="#b48751" stroke-width="0.9" fill="none"/>
-                <path d="M30 18 Q 36 24, 44 18" stroke="#b48751" stroke-width="0.8" fill="none"/>
-                <circle cx="42" cy="13" r="2" fill="#d8b06b" stroke="none" opacity="0.8"/>
-                <circle cx="55" cy="16" r="1.5" fill="#d8b06b" stroke="none" opacity="0.6"/>
-            </svg>
+            <div class="marathi-logo">
+                <svg class="floral-dec dec-1" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 15 60 C 10 30, 40 10, 65 20" stroke="#C39D60" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M 40 25 C 45 5, 60 5, 70 10" stroke="#C39D60" stroke-width="0.8" stroke-linecap="round"/>
+                    <path d="M 20 45 C 5 35, 15 20, 30 25" stroke="#C39D60" stroke-width="0.8" stroke-linecap="round"/>
+                    
+                    <path d="M 35 40 C 20 35, 25 20, 35 25 C 40 25, 40 35, 35 40 Z" fill="#455A43" opacity="0.85"/>
+                    <path d="M 50 25 C 45 15, 60 10, 65 15 C 70 20, 55 30, 50 25 Z" fill="#455A43" opacity="0.75"/>
+                    <path d="M 25 35 C 15 25, 30 15, 35 20 C 35 25, 25 35, 25 35 Z" fill="#455A43" opacity="0.65"/>
+                    
+                    <path d="M 45 35 C 30 25, 35 15, 45 20 C 55 15, 60 25, 45 35 Z" fill="#7B1E27"/>
+                    <path d="M 45 35 C 35 40, 25 30, 40 28 C 45 25, 50 32, 45 35 Z" fill="#5D161D"/>
+                    <path d="M 45 35 C 55 45, 65 30, 50 28 C 45 25, 40 32, 45 35 Z" fill="#5D161D"/>
+                    
+                    <circle cx="45" cy="30" r="2" fill="#eed68a"/>
+                    <circle cx="42" cy="27" r="1.2" fill="#eed68a"/>
+                    <circle cx="48" cy="28" r="1.2" fill="#eed68a"/>
+                </svg>
+
+                <div class="m-initial m-a">अ</div>
+                <div class="m-initial m-s">सं</div>
+
+                <svg class="floral-dec dec-2" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 10 20 C 25 55, 55 65, 75 50" stroke="#C39D60" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M 45 60 C 55 75, 45 80, 35 75" stroke="#C39D60" stroke-width="0.8" stroke-linecap="round"/>
+                    
+                    <path d="M 30 50 C 45 55, 40 70, 30 70 C 20 70, 20 55, 30 50 Z" fill="#455A43" opacity="0.85"/>
+                    <path d="M 55 55 C 65 70, 75 60, 70 55 C 60 45, 45 50, 55 55 Z" fill="#455A43" opacity="0.75"/>
+                    <path d="M 25 65 C 15 60, 20 75, 30 75 C 35 75, 30 65, 25 65 Z" fill="#455A43" opacity="0.6"/>
+                    
+                    <path d="M 45 45 C 30 40, 35 25, 45 30 C 55 25, 60 40, 45 45 Z" fill="#7B1E27"/>
+                    <path d="M 45 45 C 30 50, 25 40, 40 38 C 45 35, 50 42, 45 45 Z" fill="#5D161D"/>
+                    <path d="M 45 45 C 55 55, 65 40, 50 38 C 45 35, 40 42, 45 45 Z" fill="#5D161D"/>
+                    
+                    <circle cx="45" cy="40" r="2" fill="#eed68a"/>
+                    <circle cx="42" cy="37" r="1.2" fill="#eed68a"/>
+                    <circle cx="48" cy="38" r="1.2" fill="#eed68a"/>
+                </svg>
+            </div>
 
             <div class="invite-line">TOGETHER WITH FAMILIES</div>
+            
+            <div class="parents-line">
+                Mrs Purva and Jitendra Deokar<br>and family
+            </div>
 
             <div class="names-pair">
-                <div class="name">Sanskruti</div>
-                <div class="ampersand">&</div>
                 <div class="name">Akshay</div>
+                <div class="ampersand">&</div>
+                <div class="name">Sanskruti</div>
             </div>
 
             <div class="pleasure-text">
@@ -307,17 +474,10 @@
 
             <div class="venue-block">
                 <div class="venue-name">Raaga Palace</div>
-                <div class="venue-hint">Kalewadi, Pune</div>
+                <div class="venue-hint">pune · maharashtra</div>
             </div>
 
-           <a
-  href="https://www.google.com/maps?q=26.912433,75.787271"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="rsvp-btn"
->
-  save the date
-</a>
+            <a class="rsvp-btn" href="https://maps.google.com/?cid=6194852394384494624&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" target="_blank" rel="noopener noreferrer">save the date</a>
 
             <svg class="footer-curl" viewBox="0 0 70 20">
                 <path d="M10 15 Q 30 5, 60 15" stroke="#b4915c" stroke-width="1" fill="none" opacity="0.5"/>
@@ -325,5 +485,48 @@
             </svg>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.createElement('div');
+            container.className = 'flower-container';
+            document.body.appendChild(container);
+
+            // SVG matching the exact maroon aesthetic in the card
+            const flowerSVG = `
+            <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 15 15 C 5 5, 10 0, 15 5 C 20 0, 25 5, 15 15 Z" fill="#7B1E27"/>
+                <path d="M 15 15 C 5 25, 0 20, 5 15 C 0 10, 5 5, 15 15 Z" fill="#5D161D"/>
+                <path d="M 15 15 C 25 25, 30 20, 25 15 C 30 10, 25 5, 15 15 Z" fill="#5D161D"/>
+                <circle cx="15" cy="13" r="1.5" fill="#eed68a"/>
+            </svg>`;
+
+            // Create 35 falling flowers
+            for(let i = 0; i < 35; i++) {
+                let flower = document.createElement('div');
+                flower.className = 'falling-flower';
+                flower.innerHTML = flowerSVG;
+                
+                // Randomize sizes and starting positions
+                flower.style.left = Math.random() * 100 + 'vw';
+                flower.style.width = (Math.random() * 15 + 12) + 'px';
+                flower.style.height = flower.style.width;
+                
+                // Randomize speeds and delay so they don't fall all at once
+                flower.style.animationDuration = (Math.random() * 4 + 4.5) + 's';
+                flower.style.animationDelay = (Math.random() * 2) + 's';
+                
+                // Randomize horizontal wind drift
+                flower.style.setProperty('--drift', (Math.random() * 120 - 60) + 'px');
+                
+                container.appendChild(flower);
+            }
+
+            // Remove the container after 8 seconds so it clears out nicely
+            setTimeout(() => {
+                container.remove();
+            }, 8500);
+        });
+    </script>
 </body>
 </html>
